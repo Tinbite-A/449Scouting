@@ -1,0 +1,23 @@
+---
+title: "449 Scouting 2025"
+format: html
+editor: visual
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+setdiff(ls())
+library(tidyverse)
+
+blair_red <- "#a7000a" # gotta use our exact colors
+
+raw <- read_csv("reefscapeTestData.csv")
+```
+
+```{r dplyr}
+
+data <- raw %>%
+  group_by(team) %>%
+  summarize(
+    matches = n()
+  )
+```
