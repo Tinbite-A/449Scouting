@@ -1,0 +1,66 @@
+---
+title: "GeneratingData2025"
+format: html
+editor: visual
+---
+
+```{r}
+n <- 200
+
+scout_id <- sample(c("gabriel", "tinbite", "mitchell", "sophia"), size = n, replace = TRUE)
+match_num <- sample(1:20, size = n, replace = TRUE) #make not random when gabriel comes back
+robot_num <- sample(c("R1", "R2", "R3", "B1", "B2", "B3"), size = n, replace = TRUE)
+team_num <- sample(1:9999, size = n, replace = TRUE)
+start_loc <- sample(c("Far", "Middle", "Close"), size = n, replace = TRUE)
+no_show <- sample(c(TRUE, FALSE), size = n, replace = TRUE, prob = c(10, 90))
+move_bool <- sample(c(TRUE, FALSE), size = n, replace = TRUE, prob = c(90, 10))
+auto_coral_num_scored <- sample(0:5, size = n, replace = TRUE)
+auto_coral_highest_score <- sample(1:4, size = n, replace = TRUE)
+robot_net_scored <- sample(0:9, size = n, replace = TRUE) #add later maybe
+robot_net_missed <- as.integer((sample(0:net_scored/2, size=n, replace = TRUE)))
+proc_scored <- sample(0:9, size = n, replace = TRUE)
+hp_net_scored <- sample(0:proc_scored, size = n, replace = TRUE) #add later maybe
+hp_net_missed <- as.integer((sample(0:net_scored/2, size=n, replace = TRUE)))
+
+coral_L1_scored <- sample(0:24, size = n, replace = TRUE)
+coral_L2_scored <- sample(0:12, size = n, replace = TRUE)
+coral_L3_scored <- sample(0:12, size = n, replace = TRUE)
+coral_L4_scored <- sample(0:12, size = n, replace = TRUE)
+end_pos <- sample(c("No", "F", "P", "S", "D"), size = n, replace = TRUE)
+climb_timing <- sample(c(TRUE, FALSE), size = n, replace = TRUE)
+driver_ranking <- sample(c(5), size = n, replace = TRUE)
+died_tipped <- sample(c(TRUE, FALSE), size = n, replace = TRUE)
+card_color <- sample(c("Yellow", "No Card", "Red"), size = n, replace = TRUE, prob = c(10, 85, 5))
+
+
+df <- data.frame(
+  scout <- scout_id, 
+  match <- match_num,
+  robot <- robot_num,
+  team <- team_num,
+  start <- start_loc,
+  show <- no_show,
+  move <- move_bool,
+  acns <- auto_coral_num_scored,
+  achs <- auto_coral_highest_score,
+  robot_net_score <- robot_net_scored,
+  robot_net_miss <- robot_net_missed,
+  proc_score <- proc_scored,
+  hp_net_score <- hp_net_scored,
+  hp_net_miss <- hp_net_missed,
+  coral_L1_score <- coral_L1_scored,
+  coral_L2_score <- coral_L2_scored,
+  coral_L3_score <- coral_L3_scored,
+  coral_L4_score <- coral_L4_scored,
+  ending <- end_pos,
+  climb_time <- climb_timing,
+  driver <- driver_ranking,
+  dead <- died_tipped,
+  card <- card_color
+
+  
+)
+
+write.csv(df, file = "made_up_data.csv")
+
+```
