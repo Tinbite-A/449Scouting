@@ -168,7 +168,7 @@
       "name": "Algae",
       "fields": [
         {
-          "title": "Net Scored",
+          "title": "Robot Net Scored",
           "type": "counter",
           "required": false,
           "code": "ns",
@@ -177,7 +177,7 @@
           "step": 1
         },
         {
-          "title": "Net Missed",
+          "title": "Robot Net Missed",
           "type": "counter",
           "required": false,
           "code": "nm",
@@ -190,6 +190,24 @@
           "type": "counter",
           "required": false,
           "code": "ps",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "HP Net Scored",
+          "type": "counter",
+          "required": false,
+          "code": "ns",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "HP Net Missed",
+          "type": "counter",
+          "required": false,
+          "code": "nm",
           "defaultValue": 0,
           "min": 0,
           "step": 1
@@ -267,7 +285,7 @@
       "name": "Postmatch",
       "fields": [
         {
-          "title": "Offense Skill",
+          "title": "Driver Ranking",
           "type": "range",
           "required": false,
           "code": "or",
@@ -275,19 +293,6 @@
           "min": 1,
           "max": 5,
           "step": 1
-        },
-        {
-          "title": "Defense Skill",
-          "type": "select",
-          "required": false,
-          "code": "dr",
-          "defaultValue": "x",
-          "choices": {
-            "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
-            "x": "Not Observed"
-          }
         },
         {
           "title": "Died/Tipped Over",
