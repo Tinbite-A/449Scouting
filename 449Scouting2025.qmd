@@ -8,7 +8,7 @@ editor: visual
 setdiff(ls())
 library(tidyverse)
 
-blair_red <- "#a7000a" # gotta use our exact colors
+blair_red <- "#a7000a"
 
 raw <- read_csv("reefscapeTestData.csv")
 ```
