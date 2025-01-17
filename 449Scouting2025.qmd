@@ -2,15 +2,23 @@
 title: "449 Scouting 2025"
 format: html
 editor: visual
+params:
+    red1: 1712
+    red2: 6672
+    red3: 3504
+    blue1: 449
+    blue2: 4821
+    blue3: 9072
 ---
 
 ```{r setup, message=FALSE, warning=FALSE}
-setdiff(ls())
+rm(list = setdiff(ls(), c("red1", "red2", "red3", "blue1", "blue2", "blue3")))
+
 library(tidyverse)
 
 blair_red <- "#a7000a"
 
-raw <- read_csv("reefscapeTestData.csv")
+raw <- read_csv("made_up_data.csv")
 ```
 
 ```{r dplyr}
