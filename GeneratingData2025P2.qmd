@@ -19,7 +19,9 @@ auto_coral_highest_score <- sample(1:4, size = n, replace = TRUE)
 robot_net_scored <- sample(0:9, size = n, replace = TRUE) #add later maybe
 robot_net_missed <- as.integer((sample(0:net_scored/2, size=n, replace = TRUE)))
 proc_scored <- sample(0:9, size = n, replace = TRUE)
-hp_net_scored <- sample(0:proc_scored, size = n, replace = TRUE) #add later maybe
+hp_net_scored <- sample(0:proc_scored, size = n, replace = TRUE) #if we want to add probability/fix the net scoring (for both robot and human), I have the data for the probabilities given the number of proc_scored, but I have to like import it
+#And I don't know how to import it in its current format
+#This is a really bad comment, we can discuss next meeting.
 hp_net_missed <- as.integer((sample(0:net_scored/2, size=n, replace = TRUE)))
 
 coral_L1_scored <- sample(0:24, size = n, replace = TRUE)
